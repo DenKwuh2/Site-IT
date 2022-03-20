@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавление новости :: {{ block.super }}
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+{% block content %}
+ <div class="col-sm-7 mx-auto">
+<h1> Добавление новости</h1>
+<form action="{% url 'add_news' %}" method="post">
+
+  {% csrf_token %}
+{% comment %}
+  {{ form.as_p }}
+{% endcomment %}
+
+{{ form.non_field.errors }}
+  <div class="mb-3">
+    <label for="{{ form.title.Id_for_lablel }}" class="form-label">Название:</label>
+      {{ form.title }}
+      <div class="'invalid-feedback">
+          {{ form.title.errors }}
+      </div>
+
+  </div>
+
+    <div class="mb-3">
+    <label for="{{ form.content.Id_for_lablel }}" class="form-label">Текст: </label>
+      {{ form.content }}
+      <div class="'invalid-feedback">
+          {{ form.content.errors }}
+      </div>
+
+        <div class="mb-3">
+    <label for="{{ form.is_published.Id_for_lablel }}" class="form-label">Опубликовать</label>
+      {{ form.is_published  }}
+
+     <div class="mb-3">
+    <label for="{{ form.category.Id_for_lablel }}" class="form-label">Категория: </label>
+      {{ form.category }}
+      <div class="'invalid-feedback">
+          {{ category.errors }}
+      </div>
+
+      </div>
+
+{% comment %}
+            {% for field in form %}
+            <div class="form-group">
+                {{ field.label_tag }}
+                {{ field }}
+            </div>
+                  <div class="'invalid-feedback">
+          {{ field.errors }}
+      </div>
+            {% endfor %}
+{% endcomment %}
+
+  <button type="sabmit" class="btn btn-primary btn-block">Добавить новость</button>
+</form>
+ </div>
+{% endblock %}
+
+
+

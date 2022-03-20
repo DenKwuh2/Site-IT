@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Добавление новости :: {{ block.super }}
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="mx-auto col-sm-4">
+    <h1>Регистрация</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="sabmit" class="btn btn-primary btn-block">Регистрация</button>
+    </form>
+</div>
+{% endblock %}
+
+
+
