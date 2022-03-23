@@ -22,7 +22,7 @@ ALLOWED_HOSTS = ['*']
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-opf*g*15khik#t8v0fk&q-so8=$jyp6pg(0du^q3m+jl)1dqqx'
+SECRET_KEY = '....'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
